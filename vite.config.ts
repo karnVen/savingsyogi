@@ -5,6 +5,10 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // ✅ THIS IS THE MISSING LINE! 
+  // It fixes the "404 Not Found" errors in your console.
+  base: "/savingsyogi/", 
+
   server: {
     host: "::",
     port: 8080,
