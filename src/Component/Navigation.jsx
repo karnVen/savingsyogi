@@ -1,143 +1,97 @@
-import React, { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-
-// Image lives in the Vite public directory, so reference it via root-relative path
-const logo = "/Untitled.png";
+import logoImg from '@/assets/logo.png'
+import { Menu, X } from 'lucide-react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
-  const navRef = useRef(null);
-  const logoRef = useRef(null);
-  const linksRef = useRef([]);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-  useEffect(() => {
-    // Navbar slide down
-    gsap.fromTo(
-      navRef.current,
-      { y: -100, opacity: 0 },
-      { y: 0, opacity: 1, duration: 1, ease: "power3.out" }
-    );
-
-    // Logo animation
-    gsap.fromTo(
-      logoRef.current,
-      { scale: 0.5, opacity: 0 },
-      { scale: 1, opacity: 1, duration: 0.8, delay: 0.3, ease: "back.out(1.7)" }
-    );
-
-    // Links stagger animation (filter out any undefined entries)
-    gsap.fromTo(
-      linksRef.current.filter(Boolean),
-      { y: 20, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.6,
-        stagger: 0.15,
-        delay: 0.6,
-        ease: "power2.out",
-      }
-    );
-  }, []);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const navLinks = [
+    { label: 'Home', href: '/home' },
+    { label: 'Services', href: '/services' },
+    { label: 'About', href: '/about' },
+    { label: 'Contact', href: '/contact' },
+  ]
 
   return (
-    <nav
-      ref={navRef}
-      className="sticky top-0 z-50 bg-[#003366] h-16 md:h-20 flex items-center justify-between px-4 sm:px-6 md:px-12 shadow-md"
-    >
-      {/* Logo */}
-      <a href="#" ref={logoRef}>
-        <img
-          src={logo}
-          alt="Logo"
-          className="w-12 h-12 md:w-16 md:h-16 transition-all duration-300 hover:rounded-[30%] hover:shadow-[0_0_20px_#FFB300]"
-        />
-      </a>
-
-      {/* Desktop Menu */}
-      <ul className="hidden lg:flex items-center gap-6 xl:gap-8">
-        {["Home", "Savings", "Blog", "About", "Contact"].map((item, i) => (
-          <li key={item} ref={(el) => (linksRef.current[i] = el)}>
-            <a
-              href="#"
-              className="relative text-white text-base xl:text-lg font-medium hover:text-[#FFB300] after:content-[''] after:absolute after:left-0 after:-bottom-1 .after:h-[2px] after:w-0 after:bg-[#FFB300] after:transition-all after:duration-300 hover:after:w-full"
-            >
-              {item}
-            </a>
-          </li>
-        ))}
-
-        {/* CTA */}
-        <li ref={(el) => (linksRef.current[4] = el)}>
-          <button
-            type="button"
-            className="bg-[#FFB300] text-[#003366] px-4 xl:px-6 py-2 rounded-md font-bold hover:scale-105 transition-transform flex items-center justify-center text-sm xl:text-base"
+    <nav className="sticky top-0 z-50 bg-[#003a73] text-white shadow-md">
+      <div className="container mx-auto px-4 md:px-6 lg:px-10">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          {/* Logo */}
+          <Link
+            to="/home"
+            className="flex items-center gap-2"
+            onClick={() => setIsMenuOpen(false)}
           >
-            Sign Up
-          </button>
-        </li>
-      </ul>
+            <img
+              src={logoImg}
+              alt="Logo"
+              className="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover"
+            />
+          </Link>
 
-      {/* Mobile Menu Button */}
-      <button
-        onClick={toggleMenu}
-        className="lg:hidden text-white p-2 focus:outline-none"
-        aria-label="Toggle menu"
-      >
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          {isMenuOpen ? (
-            <path d="M6 18L18 6M6 6l12 12" />
-          ) : (
-            <path d="M4 6h16M4 12h16M4 18h16" />
-          )}
-        </svg>
-      </button>
-
-      {/* Mobile Menu */}
-      <div
-        className={`lg:hidden fixed top-16 left-0 right-0 bg-[#003366] shadow-lg transition-all duration-300 ease-in-out ${
-          isMenuOpen
-            ? "opacity-100 max-h-screen"
-            : "opacity-0 max-h-0 overflow-hidden"
-        }`}
-      >
-        <ul className="flex flex-col px-4 py-4 space-y-4">
-          {["Home", "Savings", "Blog", "About", "Contact"].map((item, i) => (
-            <li key={item}>
-              <a
-                href="#"
-                onClick={() => setIsMenuOpen(false)}
-                className="block text-white text-lg font-medium hover:text-[#FFB300] py-2 border-b border-white/10"
+          {/* Desktop Menu */}
+          <div className="hidden md:flex items-center gap-6 lg:gap-10 font-semibold text-base lg:text-lg">
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                to={link.href}
+                className="hover:text-yellow-300 transition-colors"
               >
-                {item}
-              </a>
-            </li>
-          ))}
-          <li>
-            <button
-              type="button"
-              onClick={() => setIsMenuOpen(false)}
-              className="w-full bg-[#FFB300] text-[#003366] px-6 py-3 rounded-md font-bold hover:scale-105 transition-transform"
+                {link.label}
+              </Link>
+            ))}
+            <Link
+              to="/auth?mode=signup"
+              className="bg-yellow-400 text-blue-900 px-4 lg:px-5 py-2 rounded-xl hover:bg-yellow-300 transition-colors"
             >
               Sign Up
-            </button>
-          </li>
-        </ul>
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2 text-white hover:text-yellow-300 transition-colors"
+            aria-label="Toggle menu"
+          >
+            {isMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden pb-4 animate-fade-in">
+            <div className="flex flex-col gap-2 pt-2">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  to={link.href}
+                  className="text-white hover:text-yellow-300 font-semibold py-2 px-4 rounded-lg hover:bg-white/10 transition-colors text-lg"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <div className="pt-2 px-4">
+                <Link
+                  to="/auth?mode=signup"
+                  className="block bg-yellow-400 text-blue-900 px-5 py-2 rounded-xl hover:bg-yellow-300 text-center font-semibold transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Sign Up
+                </Link>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
