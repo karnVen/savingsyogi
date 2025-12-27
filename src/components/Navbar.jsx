@@ -1,26 +1,34 @@
-import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import logoImg from "@/assets/logo.png";
+import logoImg from '@/assets/logo.png'
+import { Button } from '@/components/ui/button'
+import { Menu, X } from 'lucide-react'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const navLinks = [
-  { label: "Home", href: "/home" },
-  { label: "Services", href: "/services" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
-];
+  { label: 'Home', href: '/home' },
+  { label: 'Services', href: '/services' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+]
 
 export const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-primary shadow-md">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/home" className="flex items-center gap-2" onClick={() => setIsOpen(false)}>
-            <img src={logoImg} alt="SavingsYogi Logo" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover" />
+          <Link
+            to="/home"
+            className="flex items-center gap-2"
+            onClick={() => setIsOpen(false)}
+          >
+            <img
+              src={logoImg}
+              alt="SavingsYogi Logo"
+              className="w-8 h-8 sm:w-10 sm:h-10 rounded-full object-cover"
+            />
           </Link>
 
           {/* Desktop Navigation - Right aligned */}
@@ -77,6 +85,5 @@ export const Navbar = () => {
         )}
       </div>
     </nav>
-  );
-};
-
+  )
+}
