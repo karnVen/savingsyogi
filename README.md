@@ -71,3 +71,18 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+/home folder
+ -AuthPage.jsx
+  --line number 19-20
+  change color and that page be change logo background color
+
+-- login and register file
+that be color change login and register part
+
+/home folder
+ -- Hero.jsx
+ line number 48 (and change img background blue color  )
+
+
+

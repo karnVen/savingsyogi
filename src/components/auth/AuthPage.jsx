@@ -16,7 +16,7 @@ export default function AuthPage() {
 
   return (
     <div className="overflow-hidden h-screen">
-      <div className="flex flex-col md:flex-row w-full h-full bg-[#e8c18c]">
+      <div className="flex flex-col md:flex-row w-full h-full bg-gradient-to-br from-[#f4d5a6] via-[#e8c18c] to-[#dcb577]">
         <LeftSection />
         <AuthSection isLogin={isLogin} setIsLogin={setIsLogin} />
       </div>
