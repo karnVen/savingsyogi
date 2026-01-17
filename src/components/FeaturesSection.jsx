@@ -1,40 +1,48 @@
 import { PiggyBank, BookOpen, Target, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const features = [
   {
     icon: PiggyBank,
     title: "Smart Savings  ",
-    description: "Learn proven strategies to save more money every month. From emergency funds to long-term goals, we cover it all.",
+    description:
+      "Learn proven strategies to save more money every month. From emergency funds to long-term goals, we cover it all.",
     cta: "Start Saving",
     popular: false,
   },
   {
     icon: BookOpen,
     title: "Financial Education",
-    description: "Easy-to-understand guides on budgeting, investing basics, and building wealth. No jargon, just practical knowledge.",
-    cta: "Learn More",
+    description:
+      "Easy-to-understand guides on budgeting, investing basics, and building wealth. No jargon, just practical knowledge.",
+    ata: "Learn More",
     popular: true,
   },
   {
     icon: Target,
     title: "Goal Planning",
-    description: "Set achievable financial goals and track your progress. Whether buying a home or retiring early, we help you plan.",
-    cta: "Set Goals",
+    description:
+      "Set achievable financial goals and track your progress. Whether buying a home or retiring early, we help you plan.",
+    mta: "Set Goals",
     popular: false,
   },
 ];
 
 export const FeaturesSection = () => {
   return (
-    <section id="services" className="py-12 sm:py-16 md:py-20 lg:py-28 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="services"
+      className="py-12 sm:py-16 md:py-20 lg:py-28 bg-background"
+    >
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-3 sm:mb-4">
-            Why Choose SavingsYogi 
+            Why Choose SavingsYogi
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto px-4">
-            We provide unbiased, practical financial guidance to help you build better money habits and secure your future.
+            We provide unbiased, practical financial guidance to help you build
+            better money habits and secure your future.
           </p>
         </div>
 
@@ -59,9 +67,7 @@ export const FeaturesSection = () => {
               {/* Icon */}
               <div
                 className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center mb-4 sm:mb-6 ${
-                  feature.popular
-                    ? "bg-primary-foreground/10"
-                    : "bg-primary/10"
+                  feature.popular ? "bg-primary-foreground/10" : "bg-primary/10"
                 }`}
               >
                 <feature.icon
@@ -74,7 +80,9 @@ export const FeaturesSection = () => {
               {/* Content */}
               <h3
                 className={`text-lg sm:text-xl font-bold mb-2 sm:mb-3 ${
-                  feature.popular ? "text-primary-foreground" : "text-foreground"
+                  feature.popular
+                    ? "text-primary-foreground"
+                    : "text-foreground"
                 }`}
               >
                 {feature.title}
@@ -90,17 +98,42 @@ export const FeaturesSection = () => {
               </p>
 
               {/* CTA */}
-              <a
-                href="#"
-                className={`inline-flex items-center gap-2 text-sm font-semibold group/link ${
+              <Link
+                to="/smart-savings"
+                className={`inline-flex items-center gap-2 text-sm font-semibold ${
                   feature.popular
                     ? "text-accent hover:text-accent/80"
                     : "text-accent hover:text-primary"
                 }`}
               >
                 {feature.cta}
-                <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
-              </a>
+              </Link>
+
+              <Link
+                to="/financial-education"
+                className={`inline-flex items-center gap-2 text-sm font-semibold ${
+                  feature.popular
+                    ? "text-accent hover:text-accent/80"
+                    : "text-accent hover:text-primary"
+                }`}
+              >
+                {feature.ata}
+              </Link>
+
+
+              <Link
+                to="/Planning"
+                className={`inline-flex items-center gap-2 text-sm font-semibold ${
+                  feature.popular
+                    ? "text-accent hover:text-accent/80"
+                    : "text-accent hover:text-primary"
+                }`}
+              >
+                {feature.mta}
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+
+
             </div>
           ))}
         </div>
@@ -108,4 +141,3 @@ export const FeaturesSection = () => {
     </section>
   );
 };
-
