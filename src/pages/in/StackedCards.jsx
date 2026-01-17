@@ -6,19 +6,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import "./Cards.css";
 
+
 gsap.registerPlugin(ScrollTrigger);
+
 
 const cardsData = [
   {
     title: "Smart Savings Tips",
     description: "Deep-Dive Guide for Financial Success Saving money is more than just “putting some aside.” It’s about strategy, psychology, habit design, and smart decision-making. Below is a practical, step-by-step framework with rich explanations and examples you can apply easily — whether you’re a student, professional, or entrepreneur.",
-    img: "savingsyogi\public\Smart-Money-Saving-Tips.jpg"
+    img: "./image/smart.jpg"
   },
   {
     title: "Track Your Spending",
     description: "You can't save what you don't measure. Use apps or a simple spreadsheet to track every penny. Identify leaks in your budget and plug them immediately.",
     img: "./image/Smart-Money-Saving-Tips.jpg"
   },
+  ,
   {
     title: "Automate Savings",
     description: "Set up automatic transfers from your checking to your savings account. Pay yourself first before you have a chance to spend the money.",

@@ -1,12 +1,5 @@
-import StackedCards from "./in/StackedCards"
-import Navbar from "../components/home/Navigation"
-
 const Savings = () =>{
-  return (<>
-  <Navbar></Navbar>
-          <StackedCards></StackedCards>
-  
-  </>)
+  return (<><h1>This is Savings</h1></>)
 }
 
 export default Savings
