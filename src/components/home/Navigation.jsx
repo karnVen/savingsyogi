@@ -45,9 +45,8 @@ const Navbar = () => {
     { name: 'Savings', path: '/savings' },
     { name: 'Blog', path: '/blog' },
     { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' },
-  ]
-
+// correct
+{ name: 'Contact', path: '/home?scrollTo=contact' },]
   return (
     <nav
       ref={navRef}

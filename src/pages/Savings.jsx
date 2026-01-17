@@ -1,7 +1,5 @@
 const Savings = () =>{
-  return (<>
-  <h1>this is savings page</h1>
-  </>)
+  return (<><h1>This is Savings</h1></>)
 }
 
 export default Savings
