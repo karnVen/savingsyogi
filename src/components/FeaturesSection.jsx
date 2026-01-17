@@ -3,7 +3,7 @@ import { PiggyBank, BookOpen, Target, ArrowRight } from "lucide-react";
 const features = [
   {
     icon: PiggyBank,
-    title: "Smart Savings Tips",
+    title: "Smart Savings  ",
     description: "Learn proven strategies to save more money every month. From emergency funds to long-term goals, we cover it all.",
     cta: "Start Saving",
     popular: false,
@@ -31,7 +31,7 @@ export const FeaturesSection = () => {
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-3 sm:mb-4">
-            Why Choose SavingsYogi
+            Why Choose SavingsYogi 
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto px-4">
             We provide unbiased, practical financial guidance to help you build better money habits and secure your future.
