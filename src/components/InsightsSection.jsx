@@ -36,7 +36,7 @@ const sideArticles = [
 export const InsightsSection = () => {
   return (
     <section id="about" className="py-12 sm:py-16 md:py-20 lg:py-28 bg-muted/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-12">
           <div className="mb-4 sm:mb-0">

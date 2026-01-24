@@ -98,11 +98,10 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden fixed top-16 left-0 right-0 bg-[#003366] shadow-lg transition-all duration-300 ${
-          isMenuOpen
-            ? 'opacity-100 max-h-screen'
-            : 'opacity-0 max-h-0 overflow-hidden'
-        }`}
+        className={`lg:hidden fixed top-16 left-0 right-0 bg-[#003366] shadow-lg transition-all duration-300 ${isMenuOpen
+          ? 'opacity-100 max-h-screen'
+          : 'opacity-0 max-h-0 overflow-hidden'
+          }`}
       >
         <ul className="flex flex-col px-4 py-4 space-y-4">
           {menuLinks.map((item) => (

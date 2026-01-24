@@ -8,10 +8,12 @@ import NotFound from './pages/NotFound.jsx'
 import Contact from './pages/Contact.jsx'
 import Blog from './pages/Blog.jsx'
 import About from './pages/About.jsx'
-import SmartTips from './pages/in/SmartTips.jsx'
+
 import Savings from './pages/Savings.jsx'
 import Financial from './pages/in/Financial.jsx'
 import Planning from './pages/in/Planning.jsx'
+import StackedCards from './pages/in/StackedCards.jsx'
+
 
 
 
@@ -24,8 +26,8 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-       
-        <HashRouter>
+
+        <HashRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/home" element={<Index />} />{' '}
@@ -35,13 +37,13 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/tum" element={<NotFound />} />
-            <Route path="/smart-savings" element={<SmartTips />} />
+            <Route path="/asdf" element={<StackedCards />} />
             <Route path="/savings" element={<Savings />} />
             <Route path="/financial-education" element={<Financial />} />
             <Route path="/Planning" element={<Planning />} />
             <Route path="*" element={<NotFound />} />
-            
-           
+
+
           </Routes>
         </HashRouter>
       </TooltipProvider>

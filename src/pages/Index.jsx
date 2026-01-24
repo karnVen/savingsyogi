@@ -1,5 +1,5 @@
 import Navbar from '@/components/home/Navigation'
-import Hero from '../components/home/Hero'
+import { HeroSection } from '@/components/HeroSection'
 import { StatsBar } from '@/components/StatsBar'
 import { FeaturesSection } from '@/components/FeaturesSection'
 import { InsightsSection } from '@/components/InsightsSection'
@@ -19,7 +19,7 @@ const Index = () => {
       {!isLoading && (
         <>
           <Navbar />
-          <Hero />
+          <HeroSection />
           <StatsBar />
           <FeaturesSection />
           <InsightsSection />
