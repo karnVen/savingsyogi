@@ -5,8 +5,8 @@ import { useGSAP } from "@gsap/react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import "./Cards.css";
-
-
+import Navbar from "../../components/home/Navigation";
+import { Footer } from "../../components/Footer";
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -14,33 +14,32 @@ const cardsData = [
   {
     title: "Smart Savings Tips",
     description: "Deep-Dive Guide for Financial Success Saving money is more than just “putting some aside.” It’s about strategy, psychology, habit design, and smart decision-making. Below is a practical, step-by-step framework with rich explanations and examples you can apply easily — whether you’re a student, professional, or entrepreneur.",
-    img: "./image/smart.jpg"
+    img: `${import.meta.env.BASE_URL}image/smart.jpg`
   },
   {
     title: "Track Your Spending",
     description: "You can't save what you don't measure. Use apps or a simple spreadsheet to track every penny. Identify leaks in your budget and plug them immediately.",
-    img: "./image/Smart-Money-Saving-Tips.jpg"
+    img: `${import.meta.env.BASE_URL}image/Smart-Money-Saving-Tips.jpg`
   },
-  ,
   {
     title: "Automate Savings",
     description: "Set up automatic transfers from your checking to your savings account. Pay yourself first before you have a chance to spend the money.",
-    img: "./image/Smart-Money-Saving-Tips.jpg"
+    img: `${import.meta.env.BASE_URL}image/Smart-Money-Saving-Tips.jpg`
   },
   {
     title: "Emergency Fund",
     description: "Aim for 3-6 months of living expenses. This safety net prevents you from dipping into long-term investments when life happens.",
-    img: "./image/Smart-Money-Saving-Tips.jpg"
+    img: `${import.meta.env.BASE_URL}image/Smart-Money-Saving-Tips.jpg`
   },
   {
     title: "Debt Avalanche",
     description: "Pay off high-interest debt first. The math works out better than the snowball method, saving you significantly on interest payments over time.",
-    img: "./image/Smart-Money-Saving-Tips.jpg"
+    img: `${import.meta.env.BASE_URL}image/Smart-Money-Saving-Tips.jpg`
   },
   {
     title: "Invest Early",
     description: "Compound interest is the eighth wonder of the world. Start investing as soon as possible, even if it's just a small amount.",
-    img: "./image/Smart-Money-Saving-Tips.jpg"
+    img: `${import.meta.env.BASE_URL}image/Smart-Money-Saving-Tips.jpg`
   }
 ];
 
@@ -55,7 +54,7 @@ export default function StackedCards() {
         trigger: card,
         start: () => "top " + (50 + 30 * i), // Stack them with 30px offset
         end: "bottom bottom",
-        endTrigger: ".container",
+        endTrigger: containerRef.current,
         pin: true,
         pinSpacing: false,
         scrub: true,
@@ -99,17 +98,18 @@ export default function StackedCards() {
 
     });
 
-  }, { scope: containerRef }); // Scope to container to find .card
+  }, { scope: containerRef, dependencies: [] }); // Scope to container, added empty dependencies for safety
 
   return (
-    <div>
-      {/* Removed smooth-wrapper logic as ScrollSmoother is removed */}
+    <>
+      <Navbar />
+      <section id="hero" className="min-h-screen">
       <div className="spacer">
-        <h1 className="gradient-text">Smart Saving Tips </h1>
-        <p>Scroll down to explore the Tips <br />
-        </p>
+        <h1 className="gradient-text">Smart Saving Tips</h1>
+        <p>Scroll down to explore the Tips</p>
         <FontAwesomeIcon icon={faArrowDown} style={{ color: "#FFD43B", fontSize: "2rem" }} />
       </div>
+      </section>
       <div className="container" ref={containerRef}>
         <div className="stacked-cards">
           {cardsData.map((card, idx) => (
@@ -125,6 +125,7 @@ export default function StackedCards() {
           ))}
         </div>
       </div>
-    </div>
+    <Footer />
+    </>
   );
 }

@@ -34,7 +34,7 @@ const Preloader = ({ onComplete }) => {
       gsap.to(
         {},
         {
-          duration: 4.2,
+          duration: 0, // this are change timeing
           onUpdate: function () {
             // this.progress() goes 0 → 1
             const value = Math.round(this.progress() * 100)

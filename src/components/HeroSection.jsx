@@ -117,19 +117,19 @@ export const HeroSection = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
 
               {/* Content Container */}
-              <div className="relative z-10 h-full mx-auto px-6 md:px-12 flex flex-col justify-center" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', color: '#003366', filter: 'blur(60%)' }}>
-                <div className="max-w-3xl animate-fade-up">
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight mb-4">
+              <div className="relative z-10 h-full mx-auto px-6 md:px-12 flex flex-col justify-end pb-24 sm:pb-32"style={{ backgroundColor: '#002d6266', color: '#003366', filter: 'blur(60%)' }}>
+                <div className="max-w-3xl animate-fade-up ">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight mb-4 drop-shadow-lg">
                     {slide.title}
                   </h1>
 
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm font-bold tracking-wider text-white/80 mb-6 uppercase">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-xs sm:text-sm font-bold tracking-wider text-white/90 mb-6 uppercase drop-shadow-md">
                     <span>{slide.author}</span>
                     <span className="hidden sm:inline text-accent">•</span>
                     <span className="text-accent">{slide.category}</span>
                   </div>
 
-                  <p className="text-base sm:text-lg text-white/90 max-w-xl leading-relaxed mb-8">
+                  <p className="text-base sm:text-lg text-white/90 max-w-xl leading-relaxed drop-shadow-md">
                     {slide.description}
                   </p>
                 </div>
@@ -140,17 +140,17 @@ export const HeroSection = () => {
       </div>
 
       {/* Custom Progress Indicators */}
-      <div className="absolute bottom-8 left-0 right-0 z-20">
+      <div className="absolute bottom-6 left-0 right-0 z-20 pointer-events-none">
         <div className="mx-auto px-6 md:px-12">
-          <div className="flex gap-2">
+          <div className="flex gap-3 pointer-events-auto">
             {scrollSnaps.map((_, index) => (
               <button
                 key={index}
                 className={cn(
-                  "h-2 transition-all duration-300 rounded-sm",
+                  "h-3 sm:h-4 transition-all duration-300 rounded-full shadow-sm ring-1 ring-black/10",
                   index === selectedIndex
-                    ? "w-12 bg-accent"
-                    : "w-8 bg-white/30 hover:bg-white/50"
+                    ? "w-12 sm:w-16 bg-accent"
+                    : "w-8 sm:w-12 bg-white/40 hover:bg-white/60 active:bg-white/80"
                 )}
                 onClick={() => scrollTo(index)}
                 aria-label={`Go to slide ${index + 1}`}

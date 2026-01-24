@@ -37,7 +37,7 @@ export const FeaturesSection = () => {
       <div className=" mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground mb-3 sm:mb-4">
+          <h2 className="text-xl sm:text-1xl lg:text-2xl font-bold text-foreground mb-3 sm:mb-4">
             Why Choose SavingsYogi
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto px-4">
@@ -98,16 +98,24 @@ export const FeaturesSection = () => {
               </p>
 
               {/* CTA */}
-              <Link
-                to="/smart-savings"
-                className={`inline-flex items-center gap-2 text-sm font-semibold ${
-                  feature.popular
-                    ? "text-accent hover:text-accent/80"
-                    : "text-accent hover:text-primary"
-                }`}
-              >
-                {feature.cta}
-              </Link>
+             <Link
+  to="/asdf"
+  onClick={() => {
+    setTimeout(() => {
+      document.getElementById("hero")?.scrollIntoView({
+        behavior: "smooth",
+      });
+    }, 100);
+  }}
+  className={`inline-flex items-center gap-2 text-sm font-semibold ${
+    feature.popular
+      ? "text-accent hover:text-accent/80"
+      : "text-accent hover:text-primary"
+  }`}
+>
+  {feature.cta}
+</Link>
+
 
               <Link
                 to="/financial-education"
