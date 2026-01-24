@@ -15,6 +15,7 @@ import Planning from './pages/in/Planning.jsx'
 import StackedCards from './pages/in/StackedCards.jsx'
 
 
+import BlogPost from "./pages/BlogPost"; // Import the new file
 
 
 
@@ -36,6 +37,7 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/tum" element={<NotFound />} />
             <Route path="/asdf" element={<StackedCards />} />
             <Route path="/savings" element={<Savings />} />
