@@ -55,10 +55,8 @@ export const HeroSection = () => {
 
   if (slides.length === 0) {
     return null;}
-
   return (
-    <section className="relative w-full h-[10vh] sm:h-[10vh] md:h-[10vh] lg:h-[71vh] overflow-hidden">
-      <div className="absolute inset-0 z-0" ref={emblaRef}>
+<section className="relative w-full h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[71vh] overflow-hidden">      <div className="absolute inset-0 z-0" ref={emblaRef}>
         <div className="flex h-full">
           {slides.map((slide) => (
             <div
