@@ -57,7 +57,7 @@ export const HeroSection = () => {
     return null;}
 
   return (
-    <section className="relative w-full h-[30vh] sm:h-[60vh] md:h-[70vh] lg:h-[71vh] overflow-hidden">
+    <section className="relative w-full h-[10vh] sm:h-[60vh] md:h-[70vh] lg:h-[71vh] overflow-hidden">
       <div className="absolute inset-0 z-0" ref={emblaRef}>
         <div className="flex h-full">
           {slides.map((slide) => (
