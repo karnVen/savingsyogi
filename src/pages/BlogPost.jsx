@@ -49,10 +49,10 @@ const BlogPost = () => {
               <span className="text-[#FFB300] mr-2">✎</span>
               <span>{post.name || 'Admin'}</span>
             </div>
-            <div className="flex items-center bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
+            {/* <div className="flex items-center bg-white/10 px-4 py-2 rounded-full backdrop-blur-sm">
               <span className="text-[#FFB300] mr-2">📅</span>
               <time>{new Date(post.publishedAt).toLocaleDateString()}</time>
-            </div>
+            </div> */}
           </div>
         </div>
 

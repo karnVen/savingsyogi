@@ -67,15 +67,15 @@ const Blog = () => {
                     </div>
                   )}
                   {/* Category Badge (Optional) */}
-                  <div className="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
-                    Article
-                  </div>
+                  {/* <div className="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                     Artical
+                  </div> */}
                 </div>
 
                 {/* Content */}
                 <div className="p-6">
                   <div className="flex items-center text-sm text-gray-500 mb-3 space-x-2">
-                    <span>{new Date(post.publishedAt).toLocaleDateString()}</span>
+                    {/* <span>{new Date(post.publishedAt).toLocaleDateString()}</span> */}
                     <span>•</span>
                     <span>{post.name || 'Admin'}</span>
                   </div>
@@ -85,7 +85,7 @@ const Blog = () => {
                   </h2>
                   
                   {/* Read More Link */}
-                  <span className="inline-flex items-center text-[#e6a91b] font-semibold mt-2 group-hover:underline">
+                  <span className="inline-flex items-center text-[#2563eb] font-semibold mt-2 group-hover:underline">
                     Read Full Article →
                   </span>
                 </div>
