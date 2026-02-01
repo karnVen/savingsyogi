@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom"; // 1. Import Link
+import { Link } from "react-router-dom"; 
 import { client, urlFor } from "../sanityClient";
 import Navbar from "@/components/home/Navigation";
 import { Footer } from "@/components/Footer"; 
@@ -31,7 +31,6 @@ const Blog = () => {
       
       <main className="flex-grow pt-20 px-4 container mx-auto mb-1 ">
         <div className="text-center mb-10 ">
-          
           <h1 className="text-3xl md:text-5xl font-bold text-white leading-tight">
             Smart Money <br />
             <span className="text-[#FFB300]">For Smart People</span>
@@ -41,11 +40,11 @@ const Blog = () => {
           </p>
         </div>
         
-        
-
         {loading ? (
-          <div className="text-center py-20">Loading posts...</div>
+          <div className="text-center py-20 text-white">Loading posts...</div>
         ) : (
+          /* 👇 CHANGED LINE: Added 'max-w-4xl mx-auto' and removed 'lg:grid-cols-3' */
+          // <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post) => (
               <Link 
@@ -66,16 +65,11 @@ const Blog = () => {
                       No Image
                     </div>
                   )}
-                  {/* Category Badge (Optional) */}
-                  {/* <div className="absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
-                     Artical
-                  </div> */}
                 </div>
 
                 {/* Content */}
                 <div className="p-6">
                   <div className="flex items-center text-sm text-gray-500 mb-3 space-x-2">
-                    {/* <span>{new Date(post.publishedAt).toLocaleDateString()}</span> */}
                     <span>•</span>
                     <span>{post.name || 'Admin'}</span>
                   </div>
