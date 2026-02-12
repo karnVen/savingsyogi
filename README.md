@@ -2,7 +2,7 @@
 > **Achieve Financial Nirvana.** 💸
 > *A next-generation fintech startup democratizing wealth building for the modern Indian investor.*
 
-[![Live Demo](https://img.shields.io/badge/Live_Demo-FFB300?style=for-the-badge&logo=vercel&logoColor=black)](https://savingsyogi.github.io/)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-FFB300?style=for-the-badge&logo=vercel&logoColor=black)](https://karnven.github.io/savingsyogi/)
 
 ![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white) ![Sanity](https://img.shields.io/badge/Sanity-F03E2F?style=flat-square&logo=sanity&logoColor=white) ![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=flat-square&logo=greensock&logoColor=white)
 
@@ -83,3 +83,4 @@ To run the development environment locally:
 <p align="center">
   <i>© 2026 SavingsYogi. All Rights Reserved.</i>
 </p>
+
